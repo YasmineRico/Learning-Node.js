@@ -31,4 +31,16 @@
 
 // *-------------------Handling Argument Variables with process.argv-----------------------*
 
-console.log(process.argv);
+// console.log(process.argv);
+
+//process the values of the flags 
+function grab(flag){
+    let indexAfterFlag = process.argv.indexOf(flag) +1; //Allows to show position values after the flag
+    return process.argv[indexAfterFlag];
+}
+
+let greeting = grab("--greeting"); 
+let user = grab("--user");
+
+console.log(greeting)
+console.log(user);
