@@ -60,7 +60,7 @@ const questions = [
 //Answers to the questions will be put in this empty array
 const answers = [];
 
-//
+//Asks the questions from our questions array and i is the index for one of the questions. > to show user to write their answer
 function ask(i){
     process.stdout.write(`\n\n\n ${questions[i]}`);
     process.stdout.write(`> `);
