@@ -66,10 +66,15 @@ function ask(i = 0){
     process.stdout.write(`> `);
 }
 
-// Listen for data event on the object using node asynchronously
+// Listen for data event on the object using node asynchronously This allows to save the answers 
 process.stdin.on("data", function(data){
-    process.stdout.write(data.toString().trim()); //echoes the answer back out 
-})
+    answers.push(data.toString().trim()); //convert data to string then trim off white space
+    if(answers.length < questions.length){
+        ask(answers.length);
+    }else{
+        process.exit();
+    }
+});
 
 //invoke the questions
 ask();
