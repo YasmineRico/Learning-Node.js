@@ -79,7 +79,7 @@ process.stdin.on("data", function(data){
 //will exit the questions and then display the answers along with the string below
 process.on("exit", function(){
     process.stdout.write("\n\n\n");
-    process.stdout.write(`Go ${answers[1]} ${answers[0]} you can finish writing ${answers[2]}`);
+    process.stdout.write(`Go ${answers[1]} ${answers[0]}, you can finish writing ${answers[2]} later`);
 })
 
 //invoke the questions
