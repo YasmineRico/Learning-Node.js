@@ -45,7 +45,7 @@ let user = grab("--user");
 console.log(greeting)
 console.log(user);
 
-// *-------------------Working with standard input-----------------------*
+// *-------------------Working with Standard Output-----------------------*
 
 // sending strings to terminal
 process.stdout.write("Hello \n \n");
@@ -60,16 +60,18 @@ const questions = [
 //Answers to the questions will be put in this empty array
 const answers = [];
 
-//Asks the questions from our questions array and i is the index for one of the questions. > to show user to write their answer
-function ask(i){
+//setting an empty array for a default arg
+function ask(i = 0){
     process.stdout.write(`\n\n\n ${questions[i]}`);
     process.stdout.write(`> `);
 }
 
 // Listen for data event on the object using node asynchronously
 process.stdin.on("data", function(data){
-    process.stdout.write(data.toString().trim());
+    process.stdout.write(data.toString().trim()); //echoes the answer back out 
 })
 
 //invoke the questions
-ask(answers.length);
+ask();
+
+
