@@ -61,15 +61,15 @@ const questions = [
 const answers = [];
 
 //setting an empty array for a default arg
-function ask(i){
+function ask(i = 0){
     process.stdout.write(`\n\n\n ${questions[i]}`);
     process.stdout.write(`> `);
 }
 
 //invoke the questions
-ask(answers.length);
+ask();
 
-// Listen for data event on the object using node asynchronously This allows to save the answers 
+// Listen for data event on the object using node asynchronously This allows to save the answers.
 process.stdin.on("data", function(data){
     answers.push(data.toString().trim()); //convert data to string then trim off white space
     if(answers.length < questions.length){
