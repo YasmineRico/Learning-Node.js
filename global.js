@@ -61,10 +61,13 @@ const questions = [
 const answers = [];
 
 //setting an empty array for a default arg
-function ask(i = 0){
+function ask(i){
     process.stdout.write(`\n\n\n ${questions[i]}`);
     process.stdout.write(`> `);
 }
+
+//invoke the questions
+ask(answers.length);
 
 // Listen for data event on the object using node asynchronously This allows to save the answers 
 process.stdin.on("data", function(data){
@@ -82,7 +85,6 @@ process.on("exit", function(){
     process.stdout.write(`Go ${answers[1]} ${answers[0]}, you can finish writing ${answers[2]} later`);
 })
 
-//invoke the questions
-ask();
+
 
 
