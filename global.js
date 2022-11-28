@@ -119,7 +119,7 @@ const incTime = () =>{
     const p = Math.floor((currentTime/waitTime) * 100);
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
-    process.stdout.write(`waiting .... ${p} `);
+    process.stdout.write(`waiting .... ${p}% `);
     
 }
 
