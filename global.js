@@ -86,7 +86,7 @@
 // })
 
 
-// *-------------------Creating Delay with setTimeout-----------------------*
+// *-------------------Creating Delay with setTimeout------------------*
 
 
 const waitTime = 3000;
@@ -94,8 +94,29 @@ const waitTime = 3000;
 console.log(`Setting a ${waitTime / 1000} a second delay`);
 
 //When 3 seconds have passed it will show "done"
-const timerFinished = () => console.log("done");
+const timerFinished = () => {
+    // line to finish after three seconds instead of continuing to increment count
+    clearInterval(interval)
+    console.log("done");
+};
 
 //first function called for when the timeout has elapsed, then waitTime to define how long it should take.
 setTimeout(timerFinished, waitTime);
 
+
+// *-------------------Incorporating setInterval-----------------------*
+
+//half a second
+const waitInterval = 500;
+
+// start timer at 0
+let currentTime = 0;
+
+// increment the time starting from 0 and show every half second with the consolelog message
+const incTime = () =>{
+    currentTime += waitInterval;
+    console.log(`waiting ${currentTime / 1000} seconds`);   
+}
+
+// creating value of interval from timerFinished function
+const interval = setInterval(incTime, waitInterval);
