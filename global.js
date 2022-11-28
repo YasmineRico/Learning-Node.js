@@ -89,39 +89,40 @@
 // *-------------------Creating Delay with setTimeout------------------*
 
 
-const waitTime = 3000;
-// Sets the time for 3 seconds 
-console.log(`Setting a ${waitTime / 1000} a second delay`);
+// const waitTime = 3000;
+// // Sets the time for 3 seconds 
+// console.log(`Setting a ${waitTime / 1000} a second delay`);
 
-//When 3 seconds have passed it will show "done"
-const timerFinished = () => {
-    // line to finish after three seconds instead of continuing to increment count
-    clearInterval(interval)
-    console.log("done");
-};
+// //When 3 seconds have passed it will show "done"
+// const timerFinished = () => {
+//     // line to finish after three seconds instead of continuing to increment count
+//     clearInterval(interval)
+//     console.log("done");
+// };
 
-//first function called for when the timeout has elapsed, then waitTime to define how long it should take.
-setTimeout(timerFinished, waitTime);
+// //first function called for when the timeout has elapsed, then waitTime to define how long it should take.
+// setTimeout(timerFinished, waitTime);
 
 
-// *-------------------Incorporating setInterval-----------------------*
+// // *-------------------Incorporating setInterval-----------------------*
 
-//half a second
-const waitInterval = 500;
+// //half a second
+// const waitInterval = 500;
 
-// start timer at 0
-let currentTime = 0;
+// // start timer at 0
+// let currentTime = 0;
 
-// increment the time starting from 0 and show every half second with the consolelog message
-const incTime = () =>{
-    currentTime += waitInterval;
-    // setting to a percentage of loading 
-    const p = Math.floor((currentTime/waitTime) * 100);
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    process.stdout.write(`waiting .... ${p}% `);
+// // increment the time starting from 0 and show every half second with the consolelog message
+// const incTime = () =>{
+//     currentTime += waitInterval;
+//     // setting to a percentage of loading 
+//     const p = Math.floor((currentTime/waitTime) * 100);
+//     process.stdout.clearLine();
+//     process.stdout.cursorTo(0);
+//     process.stdout.write(`waiting .... ${p}% `);
     
-}
+// }
 
-// creating value of interval from timerFinished function
-const interval = setInterval(incTime, waitInterval);
+// // creating value of interval from timerFinished function
+// const interval = setInterval(incTime, waitInterval);
+
