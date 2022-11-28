@@ -115,7 +115,12 @@ let currentTime = 0;
 // increment the time starting from 0 and show every half second with the consolelog message
 const incTime = () =>{
     currentTime += waitInterval;
-    console.log(`waiting ${currentTime / 1000} seconds`);   
+    // setting to a percentage of loading 
+    const p = Math.floor((currentTime/waitTime) * 100);
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(`waiting .... ${p} `);
+    
 }
 
 // creating value of interval from timerFinished function
