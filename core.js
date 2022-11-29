@@ -1,4 +1,4 @@
-// // *-------------Understanding Core Modules--------------*
+// *-------------Understanding Core Modules--------------*
 
 //required function used to load modules, here we load the path module
 const path = require("path");
