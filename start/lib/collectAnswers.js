@@ -3,6 +3,8 @@
 //readline is a wrapper for stdin/stdout 
 const readline = require("readline");
 
+const {EventEmitter} = require("events");
+
 //create interface for stdin/stdout wrapper readline
 const rl = readline.createInterface({
     input: process.stdin, //maps to process standard input
@@ -18,7 +20,12 @@ const questions = [
 module.exports = (questions, done)=> {
     const answers = [];
     const [firstQuestion] = questions;
+
+    //
+    const emitter = new EventEmitter();
+
     const questionAnswered = (answer) => {
+        emitter.emit("answer", answer)
         answers.push(answer.trim());
         if(answers.length < questions.length){
             rl.question(
@@ -30,4 +37,5 @@ module.exports = (questions, done)=> {
         }
     };
     rl.question(firstQuestion, questionAnswered);
+    return emitter;
 }
